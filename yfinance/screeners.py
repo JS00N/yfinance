@@ -9,8 +9,8 @@ def _get_screener(url):
 
     def cast_types(val):
 
-        if type(val) == float:
-            return val
+        if type(val) in [float, int]:
+            return float(val)
         elif 'M' in val:
             return float(val.strip('M')) * 1e6
         elif 'B' in val:
