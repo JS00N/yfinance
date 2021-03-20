@@ -9,6 +9,9 @@ def _get_screener(url):
 
     def cast_types(val):
 
+        if isinstance(val, str):
+            val = val.replace(',', '')
+            
         if type(val) in [float, int]:
             return float(val)
         elif 'M' in val:
